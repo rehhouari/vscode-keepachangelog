@@ -84,7 +84,7 @@ function getRepository(repo: string, index: number): string {
 }
 
 export function activate(): void {
-    const { validFiles, untitledFile, triggerCharacter, dateData, defaultAuthor, defaultRepository } = parseConfig();
+    const { validFiles, untitledFile, triggerCharacter, dateData, defaultAuthor, defaultRepository, versionPrefix } = parseConfig();
     const { dateDisplay, dateEditable, dateFix } = dateData;
 
     const completionProvider: vscode.CompletionItemProvider<vscode.CompletionItem> = {
@@ -149,15 +149,15 @@ export function activate(): void {
                     `[unreleased]: https://github.com/${getAuthor(defaultAuthor, 1)}/${getRepository(
                         defaultRepository,
                         2
-                    )}/compare/v0.0.2...HEAD`,
+                    )}/compare/${versionPrefix}0.0.2...HEAD`,
                     `[0.0.2]: https://github.com/${getAuthor(defaultAuthor, 1)}/${getRepository(
                         defaultRepository,
                         2
-                    )}/compare/v0.0.1...v0.0.2`,
+                    )}/compare/${versionPrefix}0.0.1...${versionPrefix}0.0.2`,
                     `[0.0.1]: https://github.com/${getAuthor(defaultAuthor, 1)}/${getRepository(
                         defaultRepository,
                         2
-                    )}/releases/tag/v0.0.1`
+                    )}/releases/tag/${versionPrefix}0.0.1`
                 ])
             );
 
@@ -217,7 +217,7 @@ export function activate(): void {
                         `[\${1:Version}]: https://github.com/${getAuthor(defaultAuthor, 2)}/${getRepository(
                             defaultRepository,
                             3
-                        )}/releases/v\${1:Version}$0`
+                        )}/releases/${versionPrefix}\${1:Version}$0`
                     )
                 },
                 {
@@ -231,7 +231,7 @@ export function activate(): void {
                         `[\${1:Version}]: https://github.com/${getAuthor(defaultAuthor, 2)}/${getRepository(
                             defaultRepository,
                             3
-                        )}/compare/v\${4:PreviousVersion}..v\${1:Version}$0`
+                        )}/compare/${versionPrefix}\${4:PreviousVersion}..${versionPrefix}\${1:Version}$0`
                     )
                 }
             );

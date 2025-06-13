@@ -89,7 +89,12 @@
           "description": "The default repository used for URLs within the changelog.\nIf empty, it will use tab-completion within the snippet.\nCan be overriden via workspace settings.",
           "type": "string",
           "default": ""
-        }
+        },
+				"keep-a-changelog.versionPrefix": {
+					"title": "Version Tag Prefix",
+					"description": "The prefix to use for version tags in the changelog.",
+					"type": "string",
+					"default": "v"
       }
     }
   },

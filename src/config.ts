@@ -13,6 +13,7 @@ type Config = {
     dateData: DateData;
     defaultAuthor: string;
     defaultRepository: string;
+    versionPrefix: string
 };
 
 function formatDate(config: vscode.WorkspaceConfiguration): DateData {
@@ -65,6 +66,7 @@ export function parseConfig(): Config {
         triggerCharacter: config.get('triggerCharacter', true),
         dateData: formatDate(config),
         defaultAuthor: config.get('defaultAuthor', ''),
-        defaultRepository: config.get('defaultRepository', '')
+        defaultRepository: config.get('defaultRepository', ''),
+        versionPrefix: config.get('versionPrefix', 'v')
     };
 }
