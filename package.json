@@ -95,6 +95,7 @@
 					"description": "The prefix to use for version tags in the changelog.",
 					"type": "string",
 					"default": "v"
+        }
       }
     }
   },
