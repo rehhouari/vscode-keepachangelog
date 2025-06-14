@@ -90,11 +90,11 @@
           "type": "string",
           "default": ""
         },
-				"keep-a-changelog.versionPrefix": {
-					"title": "Version Tag Prefix",
-					"description": "The prefix to use for version tags in the changelog.",
-					"type": "string",
-					"default": "v"
+        "keep-a-changelog.versionPrefix": {
+          "title": "Version Tag Prefix",
+          "description": "The prefix to use for version tags in the changelog.",
+          "type": "string",
+          "default": "v"
         }
       }
     }
